@@ -2,9 +2,9 @@
 
 ## How do I install these formulae?
 
-`brew install playtechnique/templ/<formula>`
+`brew install playtechnique/homebrew-templ/templ`
 
-Or `brew tap playtechnique/templ` and then `brew install <formula>`.
+Or `brew tap playtechnique/homebrew-templ` and then `brew install templ`.
 
 ## Documentation
 
