@@ -1,5 +1,7 @@
 # PlayTechnique Templ
 
+![logo](.github/images/ghub-templ-logo.png)
+
 ## How do I install these formulae?
 
 `brew install playtechnique/homebrew-templ/templ`
