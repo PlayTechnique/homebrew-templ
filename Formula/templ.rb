@@ -7,6 +7,7 @@ class Templ < Formula
   url: "https://github.com/PlayTechnique/templ/archive/refs/tags/0.1.2.tar.gz"
   sha256: "73a4eef0640243d5924957840362d559160bdba14ad64e3a493e592f8c80983c"
   license ""
+  version ""
 
   depends_on "go" => :build
 
