@@ -4,10 +4,10 @@
 class Templ < Formula
   desc "A templating tool that downloads git repositories."
   homepage "https://github.com/PlayTechnique/templ"
-  url "https://github.com/PlayTechnique/templ/archive/refs/tags/0.1.2.tar.gz"
-  sha256 "73a4eef0640243d5924957840362d559160bdba14ad64e3a493e592f8c80983c"
+  url "https://github.com/PlayTechnique/templ/archive/refs/tags/0.1.4.tar.gz"
+  sha256 "eb2153dd04e9f4daef7e16c7882ab27a9f8e5a4abfb65b0165cc2253fc7fa4c8"
   license "BSD-3-Clause"
-  version "0.1.2"
+  version "0.1.4"
 
   depends_on "go" => :build
 
