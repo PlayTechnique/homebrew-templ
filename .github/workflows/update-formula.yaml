@@ -26,9 +26,9 @@ jobs:
 
       - name: "update formula"
         run: |
-          sed -i "s|url .* |url ${{ inputs.DOWNLOAD_URL }}|" Formula/templ.rb
-          sed -i "s|sha256 .* |sha256 ${{ inputs.SHA_256 }}|" Formula/templ.rb
-          sed -i "s|version .* |version ${{ inputs.VERSION }}|" Formula/templ.rb
+          sed -i "s|url .*|url \"${{ inputs.DOWNLOAD_URL }}\"|" Formula/templ.rb
+          sed -i "s|sha256 .*|sha256 \"${{ inputs.SHA_256 }}\"|" Formula/templ.rb
+          sed -i "s|version .*|version \"${{ inputs.VERSION }}\"|" Formula/templ.rb
 
       - name: "a debug step, in github? How shocking"
         run: |
