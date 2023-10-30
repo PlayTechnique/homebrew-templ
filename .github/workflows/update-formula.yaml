@@ -1,0 +1,39 @@
+name: "Compile and Release on Tag Push"
+
+on:
+  workflow_dispatch:
+    inputs:
+      SHA_256:
+        required: true
+        description: sha256 of the resource to download
+      DOWNLOAD_URL:
+        required: true
+        description: URL for the source tarball
+      VERSION:
+        required: true
+        description: version of the release
+
+jobs:
+  update-formula:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ env.GITHUB_REF }}
+          fetch-depth: 0
+
+      - name: "update formula"
+        run: |
+          sed -i "s|url .* |url ${{ inputs.DOWNLOAD_URL }}|" Formula/templ.rb
+          sed -i "s|sha256 .* |sha256 ${{ inputs.SHA_256 }}|" Formula/templ.rb
+          sed -i "s|version .* |version ${{ inputs.VERSION }}|" Formula/templ.rb
+
+      - name: "commit formula"
+        run: |
+          git config --global user.email "github-bot@playtechnique.io"
+           git config --global user.name "Github Bot"
+           git add Formula/templ.rb
+           git commit -m "Auto-Updater from templ: updating for ${{ inputs.VERSION }}"
+           git push
